@@ -20,3 +20,6 @@ js
 getByClass注意兼容
 winW=document.documentElement.clientWidth || document.body.clientWidth,
 event = event || window.event
+
+
+如果onmousemove没有绑定到document上而是绑定在div上面的话，你可以去试一下，如果鼠标移动太快导致鼠标移到div外面之后就不会执行移动的函数了。所以放到document下会更好不会出bug！
