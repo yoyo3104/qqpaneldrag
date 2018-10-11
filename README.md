@@ -26,3 +26,39 @@ event = event || window.event
 
 
 你看到的是鼠标在窗体的左上角，实际上是窗体的左上角移动到了鼠标的位置。因为设置的窗体的left和top等于鼠标的左和上，所以一点击窗体，窗体会迅速移到鼠标的位置。
+
+
+好家伙，那就用ie提供的css渲染吧。
+ie6用的
+
+AlphaImageLoader：在元素的背景和内容之间插入一张图片，并提供对此图片的剪切和改变尺寸的操作。如果载入的是PNG(Portable Network Graphics)格式，则0%-100%的透明度也被提供。
+
+语法格式：filter : progid:DXImageTransform.Microsoft.AlphaImageLoader ( enabled=bEnabled , sizingMethod=sSize , src=sURL )
+
+css：
+ text-indent: -999em;隐藏文字
+ 
+ 雪碧图注意偏移position是负的
+ 
+ 
+js：
+e = e || window.event;
+                if(e.stopPropagation){
+                e.stopPropagation();
+                }else{
+                e.cancelBubble=true;
+               
+      }
+      点击注意事件冒泡问题
+      
+      stateTxt.innerHTML=getByClass('stateSelect_text ',id)[0].innerHTML;
+              
+             
+              loginStateShow.className='';
+              loginStateShow.className='login-state-show '+id;
+              
+              注意空格哦 innerHTML 要注意前面的类选取正确
+              注意className前面的类要有空格 不然类就变了
+    
+ 
+ 
